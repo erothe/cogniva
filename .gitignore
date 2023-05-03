@@ -1,0 +1,5 @@
+build/
+dist/
+cogniva.egg-info/
+__pycache__/
+*pyc
