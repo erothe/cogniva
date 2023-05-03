@@ -31,4 +31,17 @@ if [ -d "$CONF_PATH" ]; then
         echo "cogniva ready"
         return
     fi
+else
+
+    mkdir $CONF_PATH
+
+    echo "[CLUSTER]"                       > $CONF_PATH/$CONF_FILE
+    echo "log_path=$COGNIVA_HOME/"        >> $CONF_PATH/$CONF_FILE
+    echo "name=phoenix"                   >> $CONF_PATH/$CONF_FILE
+    echo "nodes="                         >> $CONF_PATH/$CONF_FILE
+    echo "patterns=dataset"               >> $CONF_PATH/$CONF_FILE
+    echo "prefix=sample"                  >> $CONF_PATH/$CONF_FILE
+
+    echo "cogniva ready"
+    return
 fi
